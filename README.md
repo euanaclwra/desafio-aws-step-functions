@@ -3,7 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/AWS-8a2be2)
 
 
-> Reposítorio criado como parte de um laboratório prático com AWS Step Functions.
+> Repositório criado como parte de um laboratório prático com AWS Step Functions.
 
 <br>
 
