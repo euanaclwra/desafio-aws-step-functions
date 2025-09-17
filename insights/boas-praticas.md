@@ -34,12 +34,3 @@ Isso significa que, caso chamemos algum outro recurso e algo dê errado nesse re
 }
 ```
 No estado acima, definimos um tempo limite de 300 segundos para essa tarefa. Depois desse intervalo, o fluxo vai continuar independente do retorno.
-
-## 🎲 Transmitindo Grandes Volumes de Dados
-No Step Functions, os dados que você passa de um estado para outro tem um limite de **256 KB** (ambos os tipos de *workflow*).  
-Para transportar dados grandes, então, podemos usar nossos queridos *buckets* do **Amazon S3**! 🪣  
-
-Funciona assim:
-1. Gravamos os dados num *bucket* S3
-2. Ao invés de passar os dados, passamos só a identificação (ARN) do *bucket*
-3. Os próximos estados/etapas vão ler os dados do S3 quando precisarem processá-los
