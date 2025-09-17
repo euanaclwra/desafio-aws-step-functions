@@ -20,3 +20,26 @@ Dessa forma, além de não sobrecarregar o fluxo principal sem necessidade, aind
 ## 🏷️ Tags em State Machines
 Identificar os *workflows* com tags podem ajudar a rastrear/gerenciar cada recurso e fornecer uma melhor segurança nas políticas de acesso do IAM.  
 Podemos, por exemplo, criar uma *policy* para **restringir acessos** somente em *state machines* com a tag `environment=production`, ou seja, fluxos que estão em ambiente de produção (já em uso pelo cliente).
+
+## 🕒 Tempo Limite de Execuções
+Por padrão, o Step Functions **não** especifica um tempo limite para cada etapa do fluxo.  
+
+Isso significa que, caso chamemos algum outro recurso e algo dê errado nesse recurso externo, o fluxo vai ficar travado, esperando uma resposta que nunca vai chegar. 😬
+```
+"ActivityState": {
+  "Type": "Task",
+  "Resource": "arn:aws:states:region:account-id:activity:HelloWorld",
+  "TimeoutSeconds": 300,
+  "Next": "NextState"
+}
+```
+No estado acima, definimos um tempo limite de 300 segundos para essa tarefa. Depois desse intervalo, o fluxo vai continuar independente do retorno.
+
+## 🎲 Transmitindo Grandes Volumes de Dados
+No Step Functions, os dados que você passa de um estado para outro tem um limite de **256 KB** (ambos os tipos de *workflow*).  
+Para transportar dados grandes, então, podemos usar nossos queridos *buckets* do **Amazon S3**! 🪣  
+
+Funciona assim:
+1. Gravamos os dados num *bucket* S3
+2. Ao invés de passar os dados, passamos só a identificação (ARN) do *bucket*
+3. Os próximos estados/etapas vão ler os dados do S3 quando precisarem processá-los
