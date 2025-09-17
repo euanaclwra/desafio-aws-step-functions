@@ -19,6 +19,7 @@
 - `/examples`: Definições de workflows em JSON
 - `/diagrams`: Diagramas exportados do console da AWS
 - `/images`: Mapas mentais e resumos desenvolvidos para melhor aprendizado
+- `/README.MD`: Este arquivo, contendo um resumo do repositório
 
 ## 🔗 Referências
 - [Documentação oficial - AWS Step Functions](https://docs.aws.amazon.com/step-functions/)
