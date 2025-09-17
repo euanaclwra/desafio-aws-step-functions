@@ -24,7 +24,7 @@ Como sabemos, os *states* são os blocos de execução dentro da *state machine*
 - **Pass:** Só continua o fluxo, sem fazer nada
 - **Map:** Itera sobre uma lista
 - **Fail/Succeed:** Finaliza o fluxo com erro ou sucesso
-<br>
+
 Com esses tipos de state, podemos montar um fluxo complexo envolvendo decisões baseadas em dados, tarefas envolvendo outros recursos etc. ✨
 
 ## 🔗 Tipos de Integração
@@ -37,12 +37,21 @@ No último tópico, vimos que ***task states*** permitem a comunicação com out
 - Total flexibilidade de integração (mesmo as não otimizadas)
 - Sintaxe um pouco mais verbosa
 - Bom para serviços novos ou menos usados
-<br>
+
 Em resumo, é bom optar pela integração otimizada sempre que possível, porque é mais fácil, mas barata e mais rápida. Recorremos ao SDK quando precisamos de algo que ainda não tem integração otimizada. ✨
-<br><br>
+
 Além disso, as integrações também podem seguir três **padrões** de integração:
-- Request/Response: Prossegue pra próxima etapa assim que recebe um retorno 
+- **Request/Response:** Prossegue pra próxima etapa assim que recebe um retorno 
 - **Run a Job:** Espera o serviço finalizar pra prosseguir pra próxima etapa
 - **Wait for a callback:** Chama o serviço com um *token*, e aguarda o serviço devolver esse *token*
+
+⚠️ **Importante:** *Workflows Express* só suportam o padrão Request/Response, por exigirem chamadas curtas e síncronas.
+
+## 🔄 Recapitulando
+- *State machines* são os workflows do AWS Step Functions, e podem ser do tipo padrão ou expresso
+- Cada etapa do fluxo (*state*) pode ser uma tarefa, uma decisão, um encerramento etc.
+- Estados de tarefa (*task states*) podem chamar outros serviços da AWS
+- Essa integração com outros serviços pode ser otimizada (nativa) ou via SDK
+- Cada integração tem de seguir um padrão de resposta para prosseguir com o fluxo
 
 
