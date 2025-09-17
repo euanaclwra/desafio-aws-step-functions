@@ -3,7 +3,7 @@ Chamamos um workflow do AWS Step Functions de ***state machines***. Cada *state 
 
 
 ## 🔀 Tipos de Workflow
-O AWS Step Functions possui dois tipos de *workflows*, e a decisão entre os dois vai depender do tempo de execução, custo, volume e necessidade de histórico detalhado:
+O AWS Step Functions possui dois tipos de *workflow*, e a decisão entre os dois vai depender do tempo de execução, custo, volume e necessidade de histórico detalhado:
 ### Standard Workflow 🕒
 - Processos de longa duração (até 1 ano)
 - Menor volume de execuções
