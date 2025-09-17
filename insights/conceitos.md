@@ -1,6 +1,10 @@
 # Conceitos - AWS Step Functions ✨
 Chamamos um workflow do AWS Step Functions de ***state machines***. Cada *state machine* é composto por vários ***states***, que são as etapas do fluxo.
 
+## 🌐 Amazon States Language
+A ASL é uma linguagem baseada em JSON que usamos pra definir nossos fluxos de trabalho. É através dela que a AWS define cada estado, transição, entrada/saída, condição etc. ✨  
+
+Quando montamos um fluxo visualmente (só arrastando e soltando no *Workflow Studio*), a AWS está gerando por trás a definição em ASL.
 
 ## 🔀 Tipos de Workflow
 O AWS Step Functions possui dois tipos de *workflow*, e a decisão entre os dois vai depender do tempo de execução, custo, volume e necessidade de histórico detalhado:
