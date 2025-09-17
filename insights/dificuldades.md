@@ -36,7 +36,7 @@ Além disso, é importante garantir que *todo* fluxo chegue a um estado final. O
 Pensemos, por exemplo, em eventos *IoT* que enviam milhares de dados por segundo (temperatura, umidade, localização etc.).  
 Não há porque pagar caro para armazenar o histórico de **cada** leitura de sensor.  
 
-Ou ainda, num sistema de deteccção de fraudes em transações, onde cada compra é avaliada com base no valor, localização, histórico...  
+Ou ainda, num sistema de detecção de fraudes em transações, onde cada compra é avaliada com base no valor, localização, histórico...  
 Também não há porque guardar histórico aqui, o que importa para o fluxo é somente o **resultado** dessa análise. ✅  
 
 #### Qual a diferença entre tipos de integração e padrões de integração?
