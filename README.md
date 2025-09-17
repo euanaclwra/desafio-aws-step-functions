@@ -5,8 +5,6 @@
 
 > Repositório criado como parte de um laboratório prático com AWS Step Functions.
 
-<br>
-
 ## 🎯 Objetivo 
 - Consolidar o aprendizado sobre *workflows* automatizados
 - Documentar anotações, insights e boas práticas
