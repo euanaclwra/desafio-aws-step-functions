@@ -1,0 +1,12 @@
+{
+  "Comment": "State Machine simples retornando uma string",
+  "StartAt": "HelloWorld",
+  "States": {
+    "HelloWorld": {
+      "Type": "Pass",
+      "End": true,
+      "Output": "Hello, World!"
+    }
+  },
+  "QueryLanguage": "JSONata"
+}
