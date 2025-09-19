@@ -1,0 +1,35 @@
+{
+  "Comment": "Workflow simples para ler, processar e retornar o nome informado",
+  "StartAt": "Escolha",
+  "States": {
+    "Escolha": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Next": "ProcessarNome",
+          "Variable": "$.nome",
+          "IsPresent": true
+        }
+      ],
+      "Default": "EntradaInvalida"
+    },
+    "ProcessarNome": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "OutputPath": "$.Payload",
+      "Parameters": {
+        "Payload.$": "$",
+        "FunctionName": "arn:aws:lambda:us-east-1:557649278858:function:ProcessarNome"
+      },
+      "ResultSelector": {
+        "Payload.$": "$.Payload"
+      },
+      "End": true
+    },
+    "EntradaInvalida": {
+      "Type": "Fail",
+      "Error": "NomeInvalido",
+      "Cause": "O campo 'nome' não foi informado."
+    }
+  }
+}
