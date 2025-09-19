@@ -18,7 +18,7 @@
 - `/insights`: Anotações e aprendizados
 - `/examples`: Definições de workflows em JSON
 - `/diagrams`: Diagramas exportados do console da AWS
-- `/images`: Mapas mentais e resumos desenvolvidos para melhor aprendizado
+- `/images`: Mapas mentais desenvolvidos e imagens oficiais da documentação da AWS
 - `/README.MD`: Este arquivo, contendo um resumo do repositório
 
 ## 🔗 Referências
